@@ -1,0 +1,39 @@
+<html>
+<head>
+	<title>Simple Form</title>
+	<link rel="stylesheet" type="text/css" href="css/simpleform.css">
+	<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript" src="js/simpleform.js"></script>
+</head>
+<body>
+	<h1>Simple Contact Form</h1>
+	<div id="contact-area">
+      <form id="contactform">
+        <label for="name">* Name:</label>
+        <input type="text" name="name" id="form-name" required="">
+
+        <label for="email">* Email:</label>
+        <input type="email" name="email" id="form-email" required="">
+        
+        <label for="phone">Phone:</label>
+        <input type="text" name="phone" id="form-phone">
+
+        <label for="website">Website:</label>
+        <input type="text" name="website" id="form-website">
+
+        <input class="leaveblank" type="text" name="blank" id="form-company" value="">
+        <input class="leavehere" type="text" name="code" id="form-company" value="g4Kl!x*"> <!-- Value MUST match formCode in simpleform.js -->
+    
+        <label for="message">* Message:</label><br>
+        <textarea name="message" rows="20" cols="20" id="form-message"></textarea>
+
+        <div id="form-tick-box">
+            <input type="checkbox" name="confirmation" value="" id="form-confirmation" checked>
+            <span>Send me a confirmation message </span>
+        </div>
+
+        <button id="submit-btn" type="button" name="submit" value="Submit" class="submit-btn">Submit</button>
+      </form>
+    </div>
+</body>
+</html>
