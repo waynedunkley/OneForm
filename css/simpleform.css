@@ -10,7 +10,7 @@
 #contact-area #contactform {
 	
 }
-#contact-area input, #contact-area textarea {
+#contact-area input, #contact-area textarea, #contact-area select {
 	padding: 5px;
 	width: 471px;
 	font-family: Arial, Helvetica, sans-serif;
@@ -73,10 +73,10 @@ label {
 	font-weight: 400;
 }
 .leaveblank {
-	display: none;
+	display: none !important;
 }
 .leavehere {
-	display: none;
+	display: none !important;
 }
 .contact-success {
 	text-align: center;
@@ -136,4 +136,21 @@ button.submit-btn:active {
 }
 button.submit-btn:focus {
 	outline: none;
+}
+.sent {
+	display: none;
+}
+.sentoverlay {
+	position: relative;
+	height: 454px;
+	width: 98%;
+	text-align: center;
+	display: none;
+	padding-top: 160px;
+}
+.sentoverlay h2 {
+	color: #2B2B2B;
+	margin-top: 0px;
+	font-size: 16px;
+	line-height: 26px;
 }
