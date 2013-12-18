@@ -12,6 +12,8 @@ $customerMailMessage = 'test message'; //Main body message for confirmation emai
 $logo = false; //Use company logo? Change to false to not use a logo
 if($logo){
     $logoUrl = 'www.yourcompany.com/images/logo.jpg'; //Url for company logo
+    $logoWidth = '173px';
+    $logoHeight = '172px';
 }
 
 //Company Email Content
@@ -62,7 +64,7 @@ if($sendConfirmation){
 	$confirmationEmail .= '<body style="width: 100%;margin: 0px;">';
 	$confirmationEmail .= '<div style="background-color: #fff;width: 450px;border-radius: 10px;margin: 0 auto;padding: 10px;margin-top: 10px;">';
 	if($logo){
-	    $confirmationEmail .= '<img src="' . $logoUrl . '" style="display: block;margin: 0 auto;text-align: center;padding-top: 10px;padding-bottom: 19px;width: 300px;">';
+	    $confirmationEmail .= '<img src="' . $logoUrl . '" style="display: block;margin: 0 auto;text-align: center;padding-top: 10px;padding-bottom: 19px;width: '.$logoWidth.';height:'.$logoHeight.'">';
 	}
 	$confirmationEmail .= '<h1 style="font-family: sans-serif;color: ' . $titleColor . ';font-size: 19px;text-align: center;">Thanks for contacting<br>' . $company . '!</h1>';
 	$confirmationEmail .= '<p style="font-family: sans-serif;color: ' . $textColor . ';font-size: 14px;text-align:left;">' . $customerMailMessage . '</p>';
