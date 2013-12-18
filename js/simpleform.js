@@ -17,6 +17,7 @@ $(document).ready(function(){
 	cf.req.company = false;
 	cf.req.phone = false;
 	cf.req.website = false;
+	cf.req.heardfrom = false;
 	cf.req.message = true;
 
 	/*######################################################################################*/
@@ -35,6 +36,7 @@ $(document).ready(function(){
 				'company': $('#' + cf._id + ' input[name="company"]').val(),
 				'phone': $('#' + cf._id + ' input[name="phone"]').val(),
 				'website': $('#' + cf._id + ' input[name="website"]').val(),
+				'heardfrom': $('#' + cf._id + ' #form-heardfrom option:selected').val(),
 				'message': $('#' + cf._id + ' textarea[name="message"]').val(),
 				'confirmation': $('#' + cf._id + ' input[name="confirmation"]').is(':checked')
 			};
@@ -92,6 +94,12 @@ $(document).ready(function(){
 						//perform validation
 						break;
 					case "company":
+						if(input.length == 0){
+							$(this).addClass('error');
+							validform = false;
+						};
+						break;
+					case "heardfrom":
 						if(input.length == 0){
 							$(this).addClass('error');
 							validform = false;
