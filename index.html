@@ -1,15 +1,18 @@
 <html>
 <head>
 	<title>Simple Form</title>
-	<link rel="stylesheet" type="text/css" href="css/simpleform.css">
-	<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
-	<script type="text/javascript" src="js/simpleform.js"></script>
+	<link rel="stylesheet" type="text/css" href="res/css/simpleform.css">
+	<script type="text/javascript" src="res/js/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript" src="res/js/simpleform.js"></script>
 </head>
 <body>
 	<h1>Simple Contact Form</h1>
 	<div id="contact-area">
       <div class="sentoverlay">
-        <h2 style="visibility: visible; display: none;">Thank you, <br>Your message is on it's way and we will recieve it shortly</h2>
+        <h2>Thank you, <br>Your message is on it's way and we will recieve it shortly</h2>
+      </div>
+      <div class="erroroverlay">
+        <h2>Unfortunately it appears something has gone wrong, <br>please reload this page and try again</h2>
       </div>
       <form id="contactform">
         <label for="name">* Name:</label>
@@ -29,7 +32,7 @@
 
         <label for="heardfrom">Where did you hear about us?</label>
         <select name="heardfrom" id="form-heardfrom">
-            <option value="Please select">Please select</option>
+            <option value="default">Please select</option>
             <option value="Internet Search">Internet Search</option>
             <option value="Advertisement">Advertisement</option>
             <option value="Recommendation">Recommendation</option>

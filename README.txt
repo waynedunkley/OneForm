@@ -32,6 +32,11 @@ Limitations
 History
 ==========================
 
+v0.9.2
+ - Add dropdown select menu to form
+ - Added optional validation for dropdown select menu
+ - Error message added for unsuccessful form submission
+
 v0.9.1
  - Add updateable fields in head of simpleform.js. 
  - Now able to select which fields to validate in head of .js
