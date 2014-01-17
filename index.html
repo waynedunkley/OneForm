@@ -32,18 +32,19 @@
 
         <label for="heardfrom">Where did you hear about us?</label>
         <select name="heardfrom" id="form-heardfrom">
-            <option value="default">Please select</option>
+            <option value="">Please select</option>
             <option value="Internet Search">Internet Search</option>
             <option value="Advertisement">Advertisement</option>
             <option value="Recommendation">Recommendation</option>
             <option value="Other">Other</option>
         </select>
 
-        <input class="leaveblank" type="text" name="blank" id="form-blank" value="">
-        <input class="leavehere" type="text" name="code" id="form-code" value="g4Kl!x*"> <!-- Value MUST match formCode in simpleform.js -->
+        <!-- DO NOT REMOVE THESE FIELDS, THEY PREVENT SPAM BOTS -->
+        <input class="leaveblank" type="text" name="blank" id="form-blank" value="" required>
+        <input class="leavehere" type="text" name="code" id="form-code" value="g4Kl!x*" required> <!-- Value MUST match formCode in simpleform.js -->
     
         <label for="message">* Message:</label><br>
-        <textarea name="message" rows="20" cols="20" id="form-message"></textarea>
+        <textarea name="message" rows="20" cols="20" id="form-message" required></textarea>
 
         <div id="form-tick-box">
             <input type="checkbox" name="confirmation" value="" id="form-confirmation" checked>

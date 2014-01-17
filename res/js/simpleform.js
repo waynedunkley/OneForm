@@ -10,16 +10,6 @@ $(document).ready(function(){
 	cf.code = 'g4Kl!x*'; //This MUST match value of hidden code field in contactform
 	cf.submit_id = 'submit-btn'; //Id of form submit button, do not include id tag. ie. (#)
 
-	//Elements of form to validate, select true for areas of form to validate
-	cf.req = new Object();
-	cf.req.name = true;
-	cf.req.email = true;
-	cf.req.company = false;
-	cf.req.phone = false;
-	cf.req.website = false;
-	cf.req.heardfrom = true;
-	cf.req.message = true;
-
 	/*######################################################################################*/
 	/*######################################################################################*/
 
@@ -44,6 +34,13 @@ $(document).ready(function(){
 				'confirmation': $('#' + cf._id + ' input[name="confirmation"]').is(':checked')
 			};
 			var dataString = $.param(formData);
+
+			var extra = $('#' + cf._id).serialize();
+
+			//console.log(dataString);
+			//console.log(extra);
+
+			return;
 
 			$.ajax({
 				url: './res/php/mailform.php',
@@ -72,15 +69,23 @@ $(document).ready(function(){
 	
 	function validateForm(id){
 		//remove any previously highlighted errors
-		$('#' + id + ' input,textarea').removeClass('error');
+		$('#' + id + ' input,select,textarea').removeClass('error');
 		
 		var validform = true;
 
 		$('#' + id + ' input,textarea,select').each(function (index) {
 			var type = $(this).attr('name');
 			var input = $(this).val();
-				
-			if(cf.req[type]){		
+			var required = $(this).attr('required');
+
+			//Simple Global required field check, if required checks it has at least 1 character
+			if(required && input.length == 0){
+				$(this).addClass('error');
+				validform = false;
+			}
+
+			//For more detailed Validation checks per input field
+			if(required){		
 				switch(type){
 					case "name":
 						if(input.length == 0){
@@ -102,9 +107,11 @@ $(document).ready(function(){
 							validform = false;
 						};
 						break;
-						break;
 					case "website":
-						//perform validation
+						if(input.length == 0){
+							$(this).addClass('error');
+							validform = false;
+						};
 						break;
 					case "company":
 						if(input.length == 0){
@@ -113,7 +120,7 @@ $(document).ready(function(){
 						};
 						break;
 					case "heardfrom":
-						if(input == "default"){
+						if(input.length == 0){
 							$(this).addClass('error');
 							validform = false;
 						};
