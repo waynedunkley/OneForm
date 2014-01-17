@@ -32,6 +32,9 @@ Limitations
 History
 ==========================
 
+v0.9.2.1
+ - Bug fixes
+
 v0.9.2
  - Add dropdown select menu to form
  - Added optional validation for dropdown select menu

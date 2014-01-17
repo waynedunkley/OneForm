@@ -13,8 +13,6 @@ $(document).ready(function(){
 	/*######################################################################################*/
 	/*######################################################################################*/
 
-	
-
 
 	$('#' + cf.submit_id).click(function (e) {
 		e.preventDefault();
@@ -34,13 +32,6 @@ $(document).ready(function(){
 				'confirmation': $('#' + cf._id + ' input[name="confirmation"]').is(':checked')
 			};
 			var dataString = $.param(formData);
-
-			var extra = $('#' + cf._id).serialize();
-
-			//console.log(dataString);
-			//console.log(extra);
-
-			return;
 
 			$.ajax({
 				url: './res/php/mailform.php',
@@ -91,57 +82,48 @@ $(document).ready(function(){
 						if(input.length == 0){
 							$(this).addClass('error');
 							validform = false;
-						};
-						break;
+						};break;
 					case "email":
 						var atpos = input.indexOf("@");
 						var dotpos = input.lastIndexOf(".");
 						if (atpos<1 || dotpos<atpos+2 || dotpos+2 >= input.length){
 							$(this).addClass('error');
 							validform = false;
-						}
-						break;
+						}break;
 					case "phone":
 						if(input.length < 10){
 							$(this).addClass('error');
 							validform = false;
-						};
-						break;
+						};break;
 					case "website":
 						if(input.length == 0){
 							$(this).addClass('error');
 							validform = false;
-						};
-						break;
+						};break;
 					case "company":
 						if(input.length == 0){
 							$(this).addClass('error');
 							validform = false;
-						};
-						break;
+						};break;
 					case "heardfrom":
 						if(input.length == 0){
 							$(this).addClass('error');
 							validform = false;
-						};
-						break;
+						};break;
 					case "message":
 						if(input.length == 0){
 							$(this).addClass('error');
 							validform = false;
-						};
-						break;
+						};break;
 					case "blank":
 						if(input != ""){
 							validform = false;
-						}
-						break;
+						}break;
 					case "code":
 						if(input != cf.code){
 							$('#contact-area').append('<p>There was an error, form cannot be processed!</p>');
 							validform = false;
-						}
-						break;
+						}break;
 				}
 			}
 		});
