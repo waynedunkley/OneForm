@@ -21,29 +21,7 @@ $(document).ready(function(){
 		result = true;
 
 		if(result == true){
-			
-
-			// var formData = {
-			// 	'name': $('#' + cf._id + ' input[name="name"]').val(),
-			// 	'email': $('#' + cf._id + ' input[name="email"]').val(),
-			// 	'company': $('#' + cf._id + ' input[name="company"]').val(),
-			// 	'phone': $('#' + cf._id + ' input[name="phone"]').val(),
-			// 	'website': $('#' + cf._id + ' input[name="website"]').val(),
-			// 	'heardfrom': $('#' + cf._id + ' #form-heardfrom option:selected').val(),
-			// 	'message': $('#' + cf._id + ' textarea[name="message"]').val(),
-			// 	'confirmation': $('#' + cf._id + ' input[name="confirmation"]').is(':checked')
-			// };
-			// var dataString = $.param(formData);
-
-			
-
 			var serialform = $('#' + cf._id).serializeArray();
-
-			//console.log(dataString);
-			//console.log(serialform);
-
-			//return;
-
 			$.ajax({
 				url: './res/php/mailform.php',
 				type: 'POST',

@@ -4,10 +4,11 @@
 # UPDATE THESE FIELDS
 ########################*/
 
+
 //Confirmation Email Content
-$sendConfirmation = true;
-$cust_subject = 'Confirmation of Message'; //Subject field for Confirmation email
+$sendConfirmation = false;
 $yourCompany = 'Your Company'; //Company Name 
+$cust_subject = 'Confirmation of Message'; //Subject field for Confirmation email
 $customerMailMessage = 'This is confirmation that we have recieved your email. We will get back to you as soon as we possibly can.'; //Main body message for confirmation email
 $logo = false; //Use company logo? Change to false to not use a logo
 if($logo){
@@ -17,8 +18,8 @@ if($logo){
 }
 
 //Company Email Content
-$subject = 'New Website Enquiry'; //subject line for email
-$mailTo = 'wayne@quikclicks.com.au'; //email address for email to send to
+$subject = 'New Website Enquiry'; //Subject line for company email
+$mailTo = 'wayne@quikclicks.com.au'; //Email address to send form content to
 
 /*######################################################################################*/
 /*######################################################################################*/

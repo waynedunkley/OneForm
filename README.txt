@@ -7,7 +7,9 @@ www.waynedunkley.com
 Simple ContactForm
 ==========================
 
-Simple contact form is a simple form with client side required field and email validation. It was created by Wayne Dunkley.
+Simple contact form is a simple form with client side required field and email validation. It was created by Wayne Dunkley. 
+
+Contact form auto generates and validates content without the need for editing core js and php code.
 
 
 Required
@@ -18,15 +20,20 @@ Required
 How To Us
 ==========================
 1. Upload all files and reference.
-2. Make sure validation.js is linked to after the jQuery script.
+2. Make sure validation.js is called after the jQuery script.
 3. Copy form into website
-4. Set the $mailTo variable in mailform.php to the email you would like form submission to go to.
+4. Set variables in the head of mailform.php. ie. 
 5. (optional) Change formCode: The form code in the hidden form field MUST match the formCode in simpleform.js
+
+For required fields, include a blank 'required' attribute in the input field.
+Example: <input type="text" name="name" id="form-name" required>
+
+simpleform.js only needs to be edited if form ID, form security code or submit button ID has been changed.
 
 
 Limitations
 ==========================
-- can only use one form per page
+- can only use one form per page. RESOLUTION: To get around this duplicate form and files and rename them.
 
 
 History
@@ -34,6 +41,7 @@ History
 
 v0.9.2.2
  - Code improvements, PHP form fields are initialised and included in email automatically. Core PHP no longer needs editing
+ - Confirmation Email checkbox now works!
 
 v0.9.2.1
  - Bug fixes
