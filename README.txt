@@ -32,6 +32,9 @@ Limitations
 History
 ==========================
 
+v0.9.2.2
+ - Code improvements, PHP form fields are initialised and included in email automatically. Core PHP no longer needs editing
+
 v0.9.2.1
  - Bug fixes
 
