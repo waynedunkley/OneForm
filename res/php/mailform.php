@@ -24,11 +24,12 @@ $mailTo = 'wayne@quikclicks.com.au'; //Email address to send form content to
 /*######################################################################################*/
 /*######################################################################################*/
 
+//Customers email from form
 $email = $_POST['email'];
 
 //Email Styling
 $titleColor = '#0072BB'; //Title text color
-$textColor = '#000'; //Main body text color
+$textColor = '#222222'; //Main body text color
 
 //Set headers for email's
 $headers = "From: " . $email . "\r\n";

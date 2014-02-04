@@ -18,8 +18,6 @@ $(document).ready(function(){
 		e.preventDefault();
 		var result = validateForm(cf._id);
 
-		result = true;
-
 		if(result == true){
 			var serialform = $('#' + cf._id).serializeArray();
 			$.ajax({
