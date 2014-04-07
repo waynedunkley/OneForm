@@ -2,8 +2,23 @@
 <head>
 	<title>Simple Form</title>
 	<link rel="stylesheet" type="text/css" href="res/css/simpleform.css">
+    <link rel="stylesheet" type="text/css" href="res/css/jquery-ui-datepicker.css">
 	<script type="text/javascript" src="res/js/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="res/js/jquery-ui-datepicker.js"></script>
 	<script type="text/javascript" src="res/js/simpleform.js"></script>
+    <!--[if IE]>
+    <script type="text/javascript" src="res/js/placeholder.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('input, textarea').placeholder();
+        })
+    </script>
+    <![endif]-->
+    <script>
+        $(document).ready(function(){
+            $('#form-datepicker').datepicker({ dateFormat: 'dd-mm-yy' }).val();
+        });
+    </script>
 </head>
 <body>
 	<h1>Simple Contact Form</h1>
@@ -18,19 +33,23 @@
       </div>
       <form id="contactform">
 
-        <input type="text" name="name" id="form-name" required>
+        <label for="name">* Name:</label>
+        <input type="text" name="name" id="form-name" placeholder="name" required>
 
         <label for="email">* Email:</label>
-        <input type="email" name="email" id="form-email" required>
+        <input type="email" name="email" id="form-email" placeholder="email" required>
 
         <label for="company">Company:</label>
-        <input type="company" name="company" id="form-company">
-        
-        <label for="phone">Phone:</label>
-        <input type="text" name="phone" id="form-phone">
+        <input type="company" name="company" id="form-company" placeholder="company" >
 
         <label for="website">Website:</label>
-        <input type="text" name="website" id="form-website">
+        <input type="text" name="website" id="form-website" placeholder="website" >
+        
+        <label for="phone">Phone:</label>
+        <input type="text" name="phone" id="form-phone" placeholder="phone" >
+
+        <label for="date">Date:</label>
+        <input type="text" name="date" id="form-datepicker" placeholder="date" >
 
         <label for="heardfrom">Where did you hear about us?</label>
         <select name="heardfrom" id="form-heardfrom">
@@ -46,7 +65,7 @@
         <input class="leavehere" type="text" name="code" id="form-code" value="g4Kl!x*" required> <!-- Value MUST match formCode in simpleform.js -->
     
         <label for="message">* Message:</label><br>
-        <textarea name="message" rows="20" cols="20" id="form-message" required></textarea>
+        <textarea name="message" rows="20" cols="20" id="form-message" placeholder="message" required></textarea>
 
         <div id="form-tick-box">
             <input type="checkbox" name="confirmation" value="" id="form-confirmation" checked>

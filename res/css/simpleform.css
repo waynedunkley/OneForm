@@ -141,7 +141,7 @@ button.submit-btn:focus {
 	outline: none;
 }
 .sent {
-	display: none;
+	display: none !important;
 }
 .sentoverlay, .erroroverlay {
 	position: relative;
@@ -156,4 +156,7 @@ button.submit-btn:focus {
 	margin-top: 0px;
 	font-size: 16px;
 	line-height: 26px;
+}
+.placeholder {
+	color: #aaa;
 }

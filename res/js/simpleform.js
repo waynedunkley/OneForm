@@ -31,6 +31,7 @@ $(document).ready(function(){
 						$('#' + cf._id ).addClass('sent');
 						$('.sentoverlay').css('height', height - padding);
 						$('.sentoverlay').fadeIn(600);
+						console.log(serialform);
 					} else {
 						var height = $('#' + cf._id ).height();
 						var padding = parseInt($('.erroroverlay').css('padding-top'));
@@ -57,10 +58,10 @@ $(document).ready(function(){
 			var required = $(this).attr('required');
 
 			//Simple Global required field check, if required checks it has at least 1 character
-			if(required && input.length == 0){
-				$(this).addClass('error');
-				validform = false;
-			}
+			// if(required && input.length == 0){
+			// 	$(this).addClass('error');
+			// 	validform = false;
+			// }
 
 			//For more detailed Validation checks per input field
 			if(required){		
@@ -78,6 +79,11 @@ $(document).ready(function(){
 							validform = false;
 						}break;
 					case "phone":
+						if(input.length < 10){
+							$(this).addClass('error');
+							validform = false;
+						};break;
+					case "date":
 						if(input.length < 10){
 							$(this).addClass('error');
 							validform = false;

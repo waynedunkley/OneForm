@@ -7,14 +7,14 @@ www.waynedunkley.com
 Simple ContactForm
 ==========================
 
-Simple contact form is a simple form with client side required field and email validation. It was created by Wayne Dunkley. 
+Simple contact form is a simple form with client side validation. It was created by Wayne Dunkley. 
 
 Contact form auto generates and validates content without the need for editing core js and php code.
 
 
 Required
 ==========================
-* jQuery must be use on the webiste.
+* jQuery must be use on the webiste. (this is included in the package)
 
 
 How To Us
@@ -28,7 +28,7 @@ How To Us
 For required fields, include a blank 'required' attribute in the input field.
 Example: <input type="text" name="name" id="form-name" required>
 
-simpleform.js only needs to be edited if form ID, form security code or submit button ID has been changed.
+simpleform.js only needs to be edited if form ID form security code or submit button ID has been changed.
 
 
 Limitations
@@ -38,6 +38,12 @@ Limitations
 
 History
 ==========================
+
+v0.9.3
+ - A datepicker widget has now been added to the default form, with Javascript validate if set as a required field
+
+v0.9.2.3
+ - Added fallback support for placeholder text for Internet Explorer (all versions)
 
 v0.9.2.2
  - Code improvements, PHP form fields are initialised and included in email automatically. Core PHP no longer needs editing
