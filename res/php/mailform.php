@@ -19,7 +19,7 @@ if($logo){
 
 //Company Email Content
 $subject = 'New Website Enquiry'; //Subject line for company email
-$mailTo = 'wayne@quikclicks.com.au'; //Email address to send form content to
+$mailTo = '#'; //Email address to send form content to
 
 /*######################################################################################*/
 /*######################################################################################*/
