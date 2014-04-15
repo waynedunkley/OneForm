@@ -14,16 +14,14 @@
         })
     </script>
     <![endif]-->
-    <script>
-        $(document).ready(function(){
-            $('#form-datepicker').datepicker({ dateFormat: 'dd-mm-yy' }).val();
-        });
-    </script>
 </head>
 <body>
 	<h1>Simple Contact Form</h1>
-	
-    <!-- CONTENT TO COPY -->
+
+	<!-- ##################### -->
+    <!-- START CONTENT TO COPY -->
+    <!-- ##################### -->
+
     <div id="contact-area">
       <div class="sentoverlay">
         <h2>Thank you, <br>Your message is on it's way and we will recieve it shortly</h2>
@@ -62,20 +60,33 @@
 
         <!-- DO NOT REMOVE THESE FIELDS, THEY PREVENT SPAM BOTS -->
         <input class="leaveblank" type="text" name="blank" id="form-blank" value="" required>
-        <input class="leavehere" type="text" name="code" id="form-code" value="g4Kl!x*" required> <!-- Value MUST match formCode in simpleform.js -->
+        <input class="leavehere" type="text" name="code" id="form-code" value="12345" required> <!-- Value MUST match _code in oneform object -->
     
-        <label for="message">* Message:</label><br>
+        <label for="message">* Message:</label>
         <textarea name="message" rows="20" cols="20" id="form-message" placeholder="message" required></textarea>
 
         <div id="form-tick-box">
-            <input type="checkbox" name="confirmation" value="" id="form-confirmation" checked>
+            <input type="checkbox" name="confirmation" value="" id="form-confirmation">
             <span>Send me a confirmation message </span>
         </div>
 
         <button id="submit-btn" type="button" name="submit" value="Submit" class="submit-btn">Submit</button>
       </form>
     </div>
+    <!-- ################### -->
     <!-- END CONTENT TO COPY -->
+    <!-- ################### -->
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            oneform({
+                _id: 'contactform',
+                _code: '12345',
+                submit_id: 'submit-btn'
+            });
+            $('#form-datepicker').datepicker({ dateFormat: 'dd-mm-yy' }).val();
+        });
+    </script>
     
 </body>
 </html>

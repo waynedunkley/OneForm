@@ -2,10 +2,15 @@
 
 /*######################################################################################
 # UPDATE THESE FIELDS
-########################*/
+/*######################################################################################*/
 
+//Primary
+$mailTo = 'example@company.com'; //Email address to send form content to
+$subject = 'New Website Enquiry'; //Subject line for company email
 
-//Confirmation Email Content
+/*-------------------------------------*/
+
+//Advanced - Confirmation Email Content
 $sendConfirmation = false;
 $yourCompany = 'Your Company'; //Company Name 
 $cust_subject = 'Confirmation of Message'; //Subject field for Confirmation email
@@ -17,19 +22,15 @@ if($logo){
     $logoHeight = '172px';
 }
 
-//Company Email Content
-$subject = 'New Website Enquiry'; //Subject line for company email
-$mailTo = '#'; //Email address to send form content to
+//Email Styling
+$titleColor = '#0072BB'; //Title text color
+$textColor = '#222222'; //Main body text color
 
 /*######################################################################################*/
 /*######################################################################################*/
 
 //Customers email from form
 $email = $_POST['email'];
-
-//Email Styling
-$titleColor = '#0072BB'; //Title text color
-$textColor = '#222222'; //Main body text color
 
 //Set headers for email's
 $headers = "From: " . $email . "\r\n";

@@ -1,24 +1,14 @@
-$(document).ready(function(){
+var oneform = function(form){
 
-	var cf = new Object();
-
-	/*######################################################################################
-	# UPDATE THESE FIELDS
-	########################*/
-
-	cf._id = 'contactform'; //Id of form you want to process, do not include id tag. ie. (#)
-	cf.code = 'g4Kl!x*'; //This MUST match value of hidden code field in contactform
-	cf.submit_id = 'submit-btn'; //Id of form submit button, do not include id tag. ie. (#)
-
-	/*######################################################################################*/
-	/*######################################################################################*/
-
+	var cf = form;
 	
 	$('#' + cf.submit_id).click(function (e) {
 		e.preventDefault();
 		var result = validateForm(cf._id);
 
 		if(result == true){
+			$('#' + cf.submit_id).html('sending...');
+
 			var serialform = $('#' + cf._id).serializeArray();
 			$.ajax({
 				url: './res/php/mailform.php',
@@ -31,7 +21,6 @@ $(document).ready(function(){
 						$('#' + cf._id ).addClass('sent');
 						$('.sentoverlay').css('height', height - padding);
 						$('.sentoverlay').fadeIn(600);
-						console.log(serialform);
 					} else {
 						var height = $('#' + cf._id ).height();
 						var padding = parseInt($('.erroroverlay').css('padding-top'));
@@ -113,7 +102,7 @@ $(document).ready(function(){
 							validform = false;
 						}break;
 					case "code":
-						if(input != cf.code){
+						if(input != cf._code){
 							$('#contact-area').append('<p>There was an error, form cannot be processed!</p>');
 							validform = false;
 						}break;
@@ -127,5 +116,5 @@ $(document).ready(function(){
 			return false;
 		}
 	}
-	
-});
+}
+

@@ -4,40 +4,82 @@ Wayne Dunkley
 www.waynedunkley.com
 
 
-Simple ContactForm
+OneForm
 ==========================
 
-Simple contact form is a simple form with client side validation. It was created by Wayne Dunkley. 
+OneForm was created for developers as a starting point for creating their own web forms. OneForm has simple clientside validation and hidden form field validation to help recognise human from bots and help spam filtering.
 
-Contact form auto generates and validates content without the need for editing core js and php code.
+OneForm auto generates and validates content without the need for editing core js and php code.
+
+It has been designed to be as light as possible with additional features such as a jQuery datepicker being seperated out from the main javascript and css files to keep the weight of the main package as light as possible. jQuery has been used for its simplicity and ease of use.
 
 
 Required
 ==========================
-* jQuery must be use on the webiste. (this is included in the package)
+* jQuery(v.1.10.1) is required. (this is included in the package)
 
 
 How To Us
 ==========================
-1. Upload all files and reference.
-2. Make sure validation.js is called after the jQuery script.
+1. Upload all files to server maintaining directory structure.
+2. Link to css and javascript files in header of html:
+
+<link rel="stylesheet" type="text/css" href="res/css/simpleform.css">
+<script type="text/javascript" src="res/js/simpleform.js"></script>
+
 3. Copy form into website
-4. Set variables in the head of mailform.php. ie. 
-5. (optional) Change formCode: The form code in the hidden form field MUST match the formCode in simpleform.js
+4. Before closing body tag call oneform method and pass specified parameters
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		oneform({
+			_id: 'contactform',
+			_code: '12345',
+			submit_id: 'submit-btn'
+		});
+	});
+</script>
+
+5. Set mailto and subject fields in the head of mailform.php
+
+$mailTo = 'example@company.com'; //Email address to send form content to
+$subject = 'New Website Enquiry'; //Subject line for company email
+
+6. (optional) Change formCode: The form code in the hidden form field MUST match the formCode in simpleform.js
 
 For required fields, include a blank 'required' attribute in the input field.
 Example: <input type="text" name="name" id="form-name" required>
 
-simpleform.js only needs to be edited if form ID form security code or submit button ID has been changed.
+
+Datepicker
+==========================
+A date picker has been included in the package. This has been seperated to keep the primary form as light as possible.
+
+To use:
+1. Include link to css and javascript files in head of html
+
+<link rel="stylesheet" type="text/css" href="res/css/jquery-ui-datepicker.css">
+<script type="text/javascript" src="res/js/jquery-ui-datepicker.js"></script>
+
+2. Initialise jQuery datepicker after oneform method before the closing body tag
+
+$('#form-datepicker').datepicker({ dateFormat: 'dd-mm-yy' }).val();
 
 
 Limitations
 ==========================
-- can only use one form per page. RESOLUTION: To get around this duplicate form and files and rename them.
+- Multiple forms can now be used on the same page, but the form tag must have unique ID's. oneform() must be called for each form.
 
 
 History
 ==========================
+
+v1
+ - OneForm has now been upgraded to VERSION 1!
+ - Submit button text changes to 'sending...' upon successful submission to show form is processing
+ - Form renamed from simpleform to OneForm
+ - Form parameters now passed to oneform.js from html. oneform.js no longer needs editing
+ - General coding improvements to make easier to use
 
 v0.9.3
  - A datepicker widget has now been added to the default form, with Javascript validate if set as a required field

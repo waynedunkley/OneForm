@@ -6,6 +6,8 @@
 	display: block;
 	margin: 0 auto;
 	font-family: Arial, Helvetica, sans-serif;
+	overflow: hidden;
+	padding: 20px 0px;
 }
 #contact-area #contactform {
 	
@@ -22,7 +24,7 @@
 	color: #797979;
 }
 #contact-area select {
-	margin-bottom: 20px;
+	margin-bottom: 25px;
 	margin-top: 15px;
 }
 #contact-area textarea {
