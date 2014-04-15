@@ -24,8 +24,8 @@ How To Us
 1. Upload all files to server maintaining directory structure.
 2. Link to css and javascript files in header of html:
 
-<link rel="stylesheet" type="text/css" href="res/css/simpleform.css">
-<script type="text/javascript" src="res/js/simpleform.js"></script>
+<link rel="stylesheet" type="text/css" href="res/css/oneform.css">
+<script type="text/javascript" src="res/js/oneform.js"></script>
 
 3. Copy form into website
 4. Before closing body tag call oneform method and pass specified parameters
@@ -45,7 +45,7 @@ How To Us
 $mailTo = 'example@company.com'; //Email address to send form content to
 $subject = 'New Website Enquiry'; //Subject line for company email
 
-6. (optional) Change formCode: The form code in the hidden form field MUST match the formCode in simpleform.js
+6. (optional) Change formCode: The form code in the hidden form field MUST match _code in oneform method call
 
 For required fields, include a blank 'required' attribute in the input field.
 Example: <input type="text" name="name" id="form-name" required>
