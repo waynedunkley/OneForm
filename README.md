@@ -24,12 +24,15 @@ How To Us
 1. Upload all files to server maintaining directory structure.
 2. Link to css and javascript files in header of html:
 
+```html
 <link rel="stylesheet" type="text/css" href="res/css/oneform.css">
 <script type="text/javascript" src="res/js/oneform.js"></script>
+```
 
 3. Copy form into website
 4. Before closing body tag call oneform method and pass specified parameters
 
+```html
 <script type="text/javascript">
 	$(document).ready(function(){
 		oneform({
@@ -39,17 +42,22 @@ How To Us
 		});
 	});
 </script>
+```
 
 5. Set mailto and subject fields in the head of mailform.php
 
+```html
 $mailTo = 'example@company.com'; //Email address to send form content to
 $subject = 'New Website Enquiry'; //Subject line for company email
+```
 
 6. (optional) Change formCode: The form code in the hidden form field MUST match _code in oneform method call
 
 For required fields, include a blank 'required' attribute in the input field.
-Example: <input type="text" name="name" id="form-name" required>
-
+Example: 
+```html
+<input type="text" name="name" id="form-name" required>
+```
 
 Datepicker
 ==========================
@@ -58,13 +66,16 @@ A date picker has been included in the package. This has been seperated to keep 
 To use:
 1. Include link to css and javascript files in head of html
 
+```html
 <link rel="stylesheet" type="text/css" href="res/css/jquery-ui-datepicker.css">
 <script type="text/javascript" src="res/js/jquery-ui-datepicker.js"></script>
+```
 
 2. Initialise jQuery datepicker after oneform method before the closing body tag
 
+```html
 $('#form-datepicker').datepicker({ dateFormat: 'dd-mm-yy' }).val();
-
+```
 
 Limitations
 ==========================
