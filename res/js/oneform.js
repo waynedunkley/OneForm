@@ -1,3 +1,10 @@
+/*	
+ oneform.js - v1.0 - 2014
+ https://github.com/waynedunkley/OneForm
+ Copyright (c) 2014 Wayne Dunkley - www.waynedunkley.com; 
+ Licensed under the MIT License 
+*/
+
 var oneform = function(form){
 
 	var cf = form;
