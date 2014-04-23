@@ -2,33 +2,40 @@
 /*====================*/
 
 #contact-area {
-	width: 700px;
+	width: 350px;
+	font-family: Arial, Helvetica, sans-serif;
 	display: block;
 	margin: 0 auto;
-	font-family: Arial, Helvetica, sans-serif;
+	padding: 50px 50px;
+	background-color: #F8F8F8;
+	border: 1px solid #D1D1D1;
+	border-radius: 8px;
+	margin-bottom: 50px;
 	overflow: hidden;
-	padding: 20px 0px;
 }
 #contact-area #contactform {
 	
 }
 #contact-area input, #contact-area textarea, #contact-area select {
-	padding: 5px;
-	width: 471px;
+	font-size: 15px;
+	width: 100%;
+	padding: 5px 10px;
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 17px;
-	line-height: 20px;
+	line-height: 1.25em;
 	vertical-align: middle;
 	margin: 0px 0px 10px 0px;
 	border: 1px solid #DBDBDB;
+	border-radius: 3px;
 	color: #797979;
+	background-color: #FFF;
 }
 #contact-area select {
-	margin-bottom: 25px;
-	margin-top: 15px;
+	margin-bottom: 12px;
+	height: 1.8em;
 }
 #contact-area textarea {
 	height: 90px;
+	max-width: 100%;
 }
 #contact-area input.error, #contact-area textarea.error, #contact-area select.error {
 	border: 1px solid red;
@@ -40,7 +47,6 @@
 
 #form-tick-box {
 	float: right;
-	margin-right: 58px;
 	margin-bottom: 5px;
 }
 
@@ -62,20 +68,20 @@
 #contact-area button.submit-btn {
 	width: 100px;
 	float: right;
-	margin-right: 58px;
+	margin-right: 0px;
+	border: 1px solid #DCDCDC;
 }
 
 label {
 	float: left;
-	text-align: right;
-	margin-right: 10px;
-	width: 160px;
-	padding-top: 0px;
-	font-size: 17px;
-	line-height: 31px;
+	font-size: 15px;
+	text-align: left;
+	width: 100%;
+	line-height: 1.5em;
 	vertical-align: middle;
 	color: #797979;
 	font-weight: 400;
+	padding-bottom: 0.2em;
 }
 .leaveblank {
 	display: none !important;
@@ -93,7 +99,20 @@ label {
 
 /* BUTTON STYLING */ 
 button.submit-btn {
-	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	width:100px;
+	color:#777777;
+	font-size: 14px;
+	height: 2.4em;
+	font-family:Arial;
+	font-weight:bold;
+	font-style:normal;
+	line-height: 1em;
+	text-decoration:none;
+	text-align:center;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	text-shadow:1px 1px 0px #ffffff;
+	-moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
 	box-shadow:inset 0px 1px 0px 0px #ffffff;
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
@@ -113,19 +132,6 @@ button.submit-btn {
 	-moz-border-radius-bottomleft:6px;
 	border-bottom-left-radius:6px;
 	text-indent:0;
-	border:1px solid #dcdcdc;
-	display:inline-block;
-	color:#777777;
-	font-family:Arial;
-	font-size:14px;
-	font-weight:bold;
-	font-style:normal;
-	height:35px;
-	line-height:30px;
-	width:100px;
-	text-decoration:none;
-	text-align:center;
-	text-shadow:1px 1px 0px #ffffff;
 	clear: both;
 }
 button.submit-btn:hover {
@@ -147,17 +153,17 @@ button.submit-btn:focus {
 }
 .sentoverlay, .erroroverlay {
 	position: relative;
-	height: 454px;
-	width: 98%;
+	height: 50%;
+	width: 100%;
 	text-align: center;
 	display: none;
-	padding-top: 160px;
+	padding-top: 25%;
 }
 .sentoverlay h2, .erroroverlay h2 {
 	color: #2B2B2B;
-	margin-top: 0px;
 	font-size: 16px;
-	line-height: 26px;
+	line-height: 1.5em;
+	font-weight: 400;
 }
 .placeholder {
 	color: #aaa;
